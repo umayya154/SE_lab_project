@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta />
+    <title style =""></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+             Background:white;
+              color :mediumpurple;
+        }
+        h1 {
+    text-align: center; text-decoration-color:blueviolet; 
+}
+         h2 {
+    text-align: center; text-decoration-color:blueviolet; 
+}
+          h3 {
+    text-align: center; text-decoration-color:blueviolet; 
+}
+        .button {
+    background-color:white;
+    border: none;
+    color: blueviolet;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: blueviolet;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+        .auto-style3 {
+            width: 1283px;
+            height: 40px;
+        }
+        .auto-style5 {
+            width: 119px;
+        }
+        .auto-style6 {
+            width: 597px;
+        }
+        .auto-style7 {
+            width: 71px;
+        }
+           .button {
+    background-color:white;
+    border: none;
+    color: blueviolet;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration-color: blueviolet;
+    display: inline-block;
+    font-size: 16px;
+   
+}
+        #container {
+           background:url(event3.jpg);
+    position: relative;
+    text-align: center;
+    color: white;
+}
+        .auto-style9 {
+            height: 170px;
+            width: 1304px;
+        }
+        .auto-style10 {
+            left: -5px;
+            top: -16px;
+            height: 151px;
+            margin-bottom: 0px;
+        }
+      
+        </style>
+</head>
+<body >
+   
+    <form id="form1" runat="server">
+        <div id="container" class="auto-style10">
+   
+        <div class="top-left"> <h1 class="auto-style9">Event Management System</h1></div></div>
+     <table class="auto-style3" border="0">
+        
+         <tr style="width:150px; height:20px;border-color:deepskyblue">
+             
+             <td style =" text-align:center;text-decoration:solid" class="auto-style7">
+                Home
+             </td>
+             <td  style =" width:40px;text-align:center;text-decoration:solid">
+                  UpComingEvents </td>
+             <td  style =" text-align:right;text-decoration:solid" class="auto-style5">
+                 Contact
+             </td>
+             <td class="auto-style6">
+
+             </td>
+             <td style ="text-align:right">
+                
+             </td>
+              <td style ="text-align:right">
+                
+             </td>
+         </tr>
+         
+        
+     </table>
+    
+                 <div>
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                 </div>
+                
+             
+          
+    </form>
+</body>
+</html>
