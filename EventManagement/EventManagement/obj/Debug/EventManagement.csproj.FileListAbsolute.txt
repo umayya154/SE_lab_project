@@ -50,6 +50,6 @@ c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventMana
 c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\bin\Microsoft.Owin.Security.Google.xml
 c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\bin\Microsoft.Owin.Security.Twitter.xml
 c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
 c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\obj\Debug\EventManagement.dll
 c:\users\lahore1\documents\visual studio 2013\Projects\EventManagement\EventManagement\obj\Debug\EventManagement.pdb
+C:\Users\Lahore1\Documents\Visual Studio 2013\Projects\EventManagement\EventManagement\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
