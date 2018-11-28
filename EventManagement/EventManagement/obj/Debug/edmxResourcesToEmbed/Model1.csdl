@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventManagementDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookEvent">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="EventType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Days" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Time" Type="Time" Precision="7" />
+    <Property Name="Society" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="People" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PersonType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SocietyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegistrationNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="FeedBack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EventDetail">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FoodDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StageDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LigtingDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Flowering" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventDecorImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SittingPlane" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EventManagementDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookEvents" EntityType="Self.BookEvent" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="EventDetails" EntityType="Self.EventDetail" />
+  </EntityContainer>
+</Schema>
