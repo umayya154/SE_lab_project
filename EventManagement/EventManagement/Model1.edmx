@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EventManagementDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookEvent">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EventType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Days" Type="nchar" MaxLength="10" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="time" Precision="7" />
+          <Property Name="Society" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" />
+          <Property Name="EventImage" Type="image" />
+          <Property Name="People" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EventManagementDb.dbo.EventDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EventDetails">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FoodDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="StageDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="LigtingDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="Flowering" Type="nvarchar" MaxLength="50" />
+          <Property Name="EventDecorImage" Type="image" />
+          <Property Name="SittingPlane" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PersonType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="SocietyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegistrationNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FeedBack" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'EventManagementDb.dbo.Voluneers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Voluneers">
+          <Property Name="PersonId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="EventId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SocietyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Task" Type="ntext" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Report" Type="ntext" />
+        </EntityType>-->
+        <EntityContainer Name="EventManagementDbModelStoreContainer">
+          <EntitySet Name="BookEvent" EntityType="Self.BookEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventDetails" EntityType="Self.EventDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EventDetails].[EventId] AS [EventId], 
+    [EventDetails].[FoodDetails] AS [FoodDetails], 
+    [EventDetails].[StageDetails] AS [StageDetails], 
+    [EventDetails].[LigtingDetails] AS [LigtingDetails], 
+    [EventDetails].[Flowering] AS [Flowering], 
+    [EventDetails].[EventDecorImage] AS [EventDecorImage], 
+    [EventDetails].[SittingPlane] AS [SittingPlane]
+    FROM [dbo].[EventDetails] AS [EventDetails]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EventManagementDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookEvent">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EventType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Days" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="Time" Precision="7" />
+          <Property Name="Society" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EventImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="People" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PersonType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SocietyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegistrationNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FeedBack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EventDetail">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FoodDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StageDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LigtingDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Flowering" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EventDecorImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SittingPlane" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="EventManagementDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookEvents" EntityType="Self.BookEvent" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="EventDetails" EntityType="Self.EventDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EventManagementDbModelStoreContainer" CdmEntityContainer="EventManagementDbEntities">
+          <EntitySetMapping Name="BookEvents">
+            <EntityTypeMapping TypeName="EventManagementDbModel.BookEvent">
+              <MappingFragment StoreEntitySet="BookEvent">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Society" ColumnName="Society" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="EventImage" ColumnName="EventImage" />
+                <ScalarProperty Name="People" ColumnName="People" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="EventManagementDbModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventDetails">
+            <EntityTypeMapping TypeName="EventManagementDbModel.EventDetail">
+              <MappingFragment StoreEntitySet="EventDetails">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="FoodDetails" ColumnName="FoodDetails" />
+                <ScalarProperty Name="StageDetails" ColumnName="StageDetails" />
+                <ScalarProperty Name="LigtingDetails" ColumnName="LigtingDetails" />
+                <ScalarProperty Name="Flowering" ColumnName="Flowering" />
+                <ScalarProperty Name="EventDecorImage" ColumnName="EventDecorImage" />
+                <ScalarProperty Name="SittingPlane" ColumnName="SittingPlane" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

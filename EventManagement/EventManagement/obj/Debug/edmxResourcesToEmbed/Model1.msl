@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventManagementDbModelStoreContainer" CdmEntityContainer="EventManagementDbEntities">
+    <EntitySetMapping Name="BookEvents">
+      <EntityTypeMapping TypeName="EventManagementDbModel.BookEvent">
+        <MappingFragment StoreEntitySet="BookEvent">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Society" ColumnName="Society" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="EventImage" ColumnName="EventImage" />
+          <ScalarProperty Name="People" ColumnName="People" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="EventManagementDbModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventDetails">
+      <EntityTypeMapping TypeName="EventManagementDbModel.EventDetail">
+        <MappingFragment StoreEntitySet="EventDetails">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="FoodDetails" ColumnName="FoodDetails" />
+          <ScalarProperty Name="StageDetails" ColumnName="StageDetails" />
+          <ScalarProperty Name="LigtingDetails" ColumnName="LigtingDetails" />
+          <ScalarProperty Name="Flowering" ColumnName="Flowering" />
+          <ScalarProperty Name="EventDecorImage" ColumnName="EventDecorImage" />
+          <ScalarProperty Name="SittingPlane" ColumnName="SittingPlane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
