@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventManagementDbModelStoreContainer" CdmEntityContainer="EventManagementDbEntities">
+    <EntitySetMapping Name="EventInfoes">
+      <EntityTypeMapping TypeName="EventManagementDbModel.EventInfo">
+        <MappingFragment StoreEntitySet="EventInfo">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PlaceAddress" ColumnName="PlaceAddress" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="EventStatus" ColumnName="EventStatus" />
+          <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="EventManagementDbModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocietyInfoes">
+      <EntityTypeMapping TypeName="EventManagementDbModel.SocietyInfo">
+        <MappingFragment StoreEntitySet="SocietyInfo">
+          <ScalarProperty Name="SocietyNmae" ColumnName="SocietyNmae" />
+          <ScalarProperty Name="PresidentNmae" ColumnName="PresidentNmae" />
+          <ScalarProperty Name="WisePresident" ColumnName="WisePresident" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="ContactNumber1" ColumnName="ContactNumber1" />
+          <ScalarProperty Name="FacebookPage" ColumnName="FacebookPage" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SocietyMamber" ColumnName="SocietyMamber" />
+          <ScalarProperty Name="SocietyLogo" ColumnName="SocietyLogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventDetails">
+      <EntityTypeMapping TypeName="EventManagementDbModel.EventDetail">
+        <MappingFragment StoreEntitySet="EventDetails">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="FoodDetails" ColumnName="FoodDetails" />
+          <ScalarProperty Name="StageDetails" ColumnName="StageDetails" />
+          <ScalarProperty Name="LigtingDetails" ColumnName="LigtingDetails" />
+          <ScalarProperty Name="EventDecorImage" ColumnName="EventDecorImage" />
+          <ScalarProperty Name="Flowering" ColumnName="Flowering" />
+          <ScalarProperty Name="SittingPlane" ColumnName="SittingPlane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
