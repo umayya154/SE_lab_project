@@ -8,6 +8,7 @@ namespace EventManagementSystem.Models
 {
     public class Person
     {
+
         public int PersonId { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string PersonType { get; set; }
