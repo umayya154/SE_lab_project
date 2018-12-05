@@ -1,0 +1,113 @@
+﻿@model EventMS.Models.PersonRegister
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table class="auto-style9">
+           
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="PersonId">PersonId</label> </td>
+                <td class="auto-style8"><input type="text" name="PersonId" value="" /><br /></td>
+
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="PersonName">PersonName</label> </td>
+                <td class="auto-style8"><input type="text" name="PersonName" value="" /><br /></td>
+
+            </tr>
+           
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"> <label for="PersonType">PersonType</label></td>
+                <td class="auto-style8"><input type="text" name="PersonType" value="" /><br /></td>
+
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="Emai">Email</label> </td>
+                <td class="auto-style8"><input type="text" name="Emai" value="" /><br /></td>
+
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12">
+                    <label for="Address">Address</label>
+                </td>
+                <td class="auto-style8">
+                    <input type="text" name="Address" value="" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12">
+                    <label for="SocietyName">SocietyName</label>
+                </td>
+                <td class="auto-style8"><input type="text" name="SocietyName" value="" /><br /></td>
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="department">Department</label></td>
+                <td class="auto-style8"><input type="text" name="Department" value="" /><br /></td>
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"> <label for="phone number">Phone Number</label></td>
+                <td class="auto-style8"><input type="text" name="Phone Number" value="" /><br /></td>
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"> <label for="Password">Password</label></td>
+                <td class="auto-style8"> <input type="text" name="Password" value="" /><br /></td>
+            </tr>
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="RegistrationNo">RegistrationNo</label></td>
+                <td class="auto-style8"><input type="text" name="RegistrationNo" value="" /><br /></td>
+            </tr>
+            
+            <tr>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"><label for="FeedBack">FeedBack</label> </td>
+                <td class="auto-style15"><input type="text" name="FeedBack" value="" class="auto-style14" /><br /></td>
+                <td></td>
+            </tr>
+          
+
+            <tr>
+                <td class="auto-style11">
+                    <p>Already have an account.<a href="#">Login</a></p>
+                </td>
+                <td class="auto-style12"></td>
+                <td class="auto-style8"></td>
+            </tr>
+
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

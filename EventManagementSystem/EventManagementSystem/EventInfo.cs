@@ -25,6 +25,6 @@ namespace EventManagementSystem
         public string ImagePath { get; set; }
         public int People { get; set; }
         public string EventStatus { get; set; }
-        public string SocietyName { get; set; }
+        //public string SocietyName { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace EventManagementSystem.Controllers
 
             return View();
         }
-        public ActionResult Login(Person obj)
+       /* public ActionResult Login(Person obj)
         {
             EventManagementDbEntities db = new EventManagementDbEntities();
             List<Person> list = db.People.ToList();
@@ -40,6 +40,6 @@ namespace EventManagementSystem.Controllers
                 } 
             }
              
-        }
+        }*/
     }
 }
